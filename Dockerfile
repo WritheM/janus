@@ -13,6 +13,9 @@ RUN echo "node ALL=(ALL) NOPASSWD: /usr/local/bin/npm" >> /etc/sudoers
 # Copy start.sh to the root of the container
 COPY start.sh /start.sh
 
+# Copy the ecosystem configuration file to the config directory
+COPY ecosystem.config.js /config/ecosystem.config.js
+
 # Set execute permissions for start.sh
 RUN chmod +x /start.sh
 
