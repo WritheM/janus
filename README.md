@@ -15,8 +15,7 @@ The entry point of the bot is expected to be a file named `entry.js` by default.
 ### Running the Container
 Here is an example of how to run the Janus container with the necessary configurations:
 
-```sh
-docker run -v /path/to/your/project:/app -e BOT_FILE=discord.js janus-container
+`sh docker run -v /path/to/your/project:/app -e BOT_FILE=discord.js janus-container `
 
 - `/path/to/your/project` is the path to your project directory on the host machine.
 - `-v /path/to/your/project:/app` mounts your project directory to the `/app` directory in the container.
