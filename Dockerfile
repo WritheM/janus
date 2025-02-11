@@ -22,5 +22,8 @@ USER node
 # Set the environment variable for the entry point of the bot, default is entry.js
 ENV BOT_FILE=entry.js
 
+# Set the default value for POLLING to false
+ENV POLLING false
+
 # Start the application using start.sh
 CMD ["sh", "/start.sh"]

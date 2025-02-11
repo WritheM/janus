@@ -9,8 +9,21 @@ Janus is a Docker container designed to run a Node.js bot with pm2, monitoring f
 ### Directory Mounting
 To use Janus, you must mount your project directory to the `/app` directory in the container. This is where your bot's code will reside.
 
-### Environment Variable
-The entry point of the bot is expected to be a file named `entry.js` by default. However, you can override this default by setting an environment variable `BOT_FILE`. For example, if your bot's entry file is `discord.js`, you can set the environment variable accordingly.
+### Environment Variables
+
+The entry point of the bot is expected to be a file named `entry.js` by default. However, you can override this default by setting the environment variable `BOT_FILE`. For example, if your bot's entry file is `discord.js`, you can set the environment variable accordingly.
+
+export BOT_FILE=discord.js
+
+#### Enabling Polling
+
+To enable file change detection with polling (useful for mounted NFS volumes), you can set the environment variable `POLLING` to `true`. By default, polling is disabled.
+
+export POLLING=true
+
+Example usage to run the container with these environment variables:
+
+docker run -e BOT_FILE=discord.js -e POLLING=true -v /path/to/host/directory:/app <image-name>
 
 ### Running the Container
 Here is an example of how to run the Janus container with the necessary configurations:
